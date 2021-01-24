@@ -39,12 +39,9 @@ function createManager() {
             type : 'input',
             message : 'What is the office number of manager?'
         },
-    ]).then()
-
-    .then(answers => {
+    ]).then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         team.push(manager)
-        // call the create team function
         
         createTeam()
     })
@@ -77,9 +74,13 @@ createIntern(){
             message : 'What is the school intern attended?'
         },
 
-    ])
+    ]).then(answers => {
+        const intern = new Intern (answers.name, answers.id, answers.email, answers.github)
+        team.push(engineer)
+
+        createTeam();
   
-}
+})
 
 createEngineer(){
     inquirer.prompt([
