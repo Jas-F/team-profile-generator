@@ -43,12 +43,12 @@ function createManager() {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         team.push(manager)
         
-        createTeam()
-    })
+        createTeam();
+    });
 }
-createManager()
+// createManager()
 
-createIntern(){
+function createIntern(){
     inquirer.prompt([
         {
             name : 'name',
@@ -75,14 +75,14 @@ createIntern(){
         },
 
     ]).then(answers => {
-        const intern = new Intern (answers.name, answers.id, answers.email, answers.github)
-        team.push(engineer)
+        const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
+        team.push(intern)
 
         createTeam();
   
-})
-
-createEngineer(){
+});
+}
+function createEngineer(){
     inquirer.prompt([
         {
             name : 'name',
@@ -114,7 +114,7 @@ createEngineer(){
 
         createTeam();
 
-})
+});
 
 }
 
@@ -133,11 +133,14 @@ function createTeam() {
             type : 'list',
             name : 'employeeChoice',
             message : 'Which type of employee would you like to add',
-            choices : ['Engineer', 'Intern', 'No more member to add']
+            choices : ['Manager','Engineer', 'Intern', 'No more member to add']
         }
-    ])
-    .then(answer => {
+    ]).then(answer => {
         switch(answer.employeeChoice){
+            case 'Manager':
+                createManager()
+                break;
+
             case 'Engineer':
                 createEngineer()
                 break;
@@ -149,8 +152,8 @@ function createTeam() {
             default:
                 buildTeam()
         }
-    })
-}
+    });
+};
 
 createTeam();
 // After the user has input all employees desired, call the `render` function (required
@@ -171,4 +174,4 @@ createTeam();
 // and Intern classes should all extend from a class named Employee; see the directions
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
+// for the provided `render` function to work! ``
