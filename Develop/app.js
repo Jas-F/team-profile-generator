@@ -108,10 +108,19 @@ createEngineer(){
             message : 'What is the github account of engineer?'
         },
        
-    ])
+    ]).then(answers => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+        team.push(engineer)
+
+        createTeam();
+
+})
 
 }
 
+function buildTeam() {
+    const newPage = render(te)
+}
 function createTeam() {
     inquirer.prompt([
         {
