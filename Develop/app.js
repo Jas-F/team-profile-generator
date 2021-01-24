@@ -54,9 +54,27 @@ createManager()
 createIntern(){
     inquirer.prompt([
         {
-            name : 'officeNumber',
+            name : 'name',
             type : 'input',
-            message : 'What is the office number of manager?'
+            message : 'What is the name of intern?'
+        },
+
+        {
+            name : 'id',
+            type : 'input',
+            message : 'What is the id of intern?'
+        },
+
+        {
+            name : 'email',
+            type : 'input',
+            message : 'What is the email of intern?'
+        },
+
+        {
+            name : 'school',
+            type : 'input',
+            message : 'What is the school intern attended?'
         },
 
     ])
