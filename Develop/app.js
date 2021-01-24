@@ -64,6 +64,32 @@ createIntern(){
 }
 
 createEngineer(){
+    inquirer.prompt([
+        {
+            name : 'name',
+            type : 'input',
+            message : 'What is the name of engineer?'
+        },
+
+        {
+            name : 'id',
+            type : 'input',
+            message : 'What is the id of engineer?'
+        },
+
+        {
+            name : 'email',
+            type : 'input',
+            message : 'What is the email of engineer?'
+        },
+
+        {
+            name : 'github',
+            type : 'input',
+            message : 'What is the github account of engineer?'
+        },
+       
+    ])
 
 }
 
