@@ -4,6 +4,7 @@ As an owner I want to generate a webpage that displays my team's basic info so t
 <br>
 
 ==========
+![img](team.png)
 
 ## Create Base Class
 
@@ -77,6 +78,7 @@ function createTeam() {
 ## Deployed Link
 
 * [See Walk Through](https://drive.google.com/file/d/1eR0zT-F6Htz8KhhYQt19EksU9TUQCGGF/view)
+* [See Deployed Link](https://jas-f.github.io/team-profile-generator/.)
 
 ## License
 
